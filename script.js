@@ -1,17 +1,21 @@
 let attemps = [
-    'Paper',
-    'Scissors',
-    'Rock',
+    'paper',
+    'scissors',
+    'rock',
 ]
 
 function rockPaperScissors () {
-    let userAttempt = prompt ("Let's play a game; Paper, Scissors, Rock. Answer below with either 'paper', 'scissors' or 'rock'!")
-
     randomGeneratorRange = 3
     let index = Math.floor (Math.random() *randomGeneratorRange)
+    
+    
+    let userAttempt = prompt ("Let's play a game; Paper, Scissors, Rock. Answer below with either 'paper', 'scissors' or 'rock'!")
 
-    if (index = userAttempt) {
+
+    if (attemps[index] = userAttempt) {
         alert('We tied! Try again')
+    } else if (attempts[index] =! userAttempt) {
+        alert('Someone won / lost')
     }
             
 
