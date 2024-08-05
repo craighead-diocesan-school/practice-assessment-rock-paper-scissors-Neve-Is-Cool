@@ -17,10 +17,18 @@ function rockPaperScissors () {
     
     if (userAttempt == computerAttempt) {
         alert('We tied! Try again')
-    } else if (userAttempt == 'scissors' && computerAttempt == 'paper' || userAttempt == 'rock' && computerAttempt == 'scissors' || userAttempt == 'paper' && computerAttempt == 'rock') {
+    } else if (
+        userAttempt == 'scissors' && computerAttempt == 'paper' || 
+        userAttempt == 'rock' && computerAttempt == 'scissors' || 
+        userAttempt == 'paper' && computerAttempt == 'rock') {
         alert('Congrats, you win!')
-    } else if (userAttempt == 'paper' && computerAttempt == 'scissors' || userAttempt == 'rock' && computerAttempt == 'paper' || userAttempt == 'scissors' && computerAttempt == 'rock' ) {
+
+    } else if (
+        userAttempt == 'paper' && computerAttempt == 'scissors' || 
+        userAttempt == 'rock' && computerAttempt == 'paper' || 
+        userAttempt == 'scissors' && computerAttempt == 'rock' ) {
         alert('You lose suckerrrr')
+        
     } else {
         alert ('Invalid Response, please try again.')
     }
