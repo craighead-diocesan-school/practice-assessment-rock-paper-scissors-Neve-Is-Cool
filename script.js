@@ -6,41 +6,55 @@ function rockPaperScissors () {
         'rock',
     ]
 
-    let userAttempt = prompt ("Let's play a game; Paper, Scissors, Rock. Answer below with either 'paper', 'scissors' or 'rock'!")
+    let numOfAttempts = 0
+    let userScore = 0
+    let computerScore = 0
+    let numOfTies = 0
 
-    const randomGeneratorRange = 3
-    let index = Math.floor (Math.random() *randomGeneratorRange)
+    while (numOfAttempts<3) {
 
-    let computerAttempt = attempts[index]
+        const randomGeneratorRange = 3
+        let index = Math.floor (Math.random() *randomGeneratorRange)
+        let computerAttempt = attempts[index]
 
-    alert (computerAttempt + '!')
-    
-    if (userAttempt == computerAttempt) {
-        alert('We tied! Try again')
-    } else if (
-        userAttempt == 'scissors' && computerAttempt == 'paper' || 
-        userAttempt == 'rock' && computerAttempt == 'scissors' || 
-        userAttempt == 'paper' && computerAttempt == 'rock') {
-        alert('Congrats, you win!')
+        let userAttempt = prompt ("Let's play a game; Paper, Scissors, Rock & Best out of three! Answer below with either 'paper', 'scissors' or 'rock'!")
+        userAttempt = userAttempt.toLowerCase()
 
-    } else if (
-        userAttempt == 'paper' && computerAttempt == 'scissors' || 
-        userAttempt == 'rock' && computerAttempt == 'paper' || 
-        userAttempt == 'scissors' && computerAttempt == 'rock' ) {
-        alert('You lose suckerrrr')
+        alert (computerAttempt + ' is my attempt!')
         
-    } else {
-        alert ('Invalid Response, please try again.')
+        if (userAttempt == computerAttempt) {
+            alert('We tied! Try again')
+            numOfTies = numOfTies + 1
+        } else if (
+            userAttempt == 'scissors' && computerAttempt == 'paper' || 
+            userAttempt == 'rock' && computerAttempt == 'scissors' || 
+            userAttempt == 'paper' && computerAttempt == 'rock') {
+            alert('Congrats, you win!') 
+            userScore = userScore + 1
+
+
+        } else if (
+            userAttempt == 'paper' && computerAttempt == 'scissors' || 
+            userAttempt == 'rock' && computerAttempt == 'paper' || 
+            userAttempt == 'scissors' && computerAttempt == 'rock' ) {
+            alert('You lose suckerrrr')
+            computerScore = computerScore + 1
+            
+        } else {
+            alert ('Invalid Response, please try again.')
+        }
+
+        numOfAttempts = numOfAttempts + 1
     }
 
-            
+    if (computerScore>userScore) {
+        alert ('You had a score of ' + userScore + ', I had a score of ' + computerScore + ' and we had ' + numOfTies + ' games tied, so I win!!!! AND YOU LOSE')
+    } else if (computerScore<userScore) {
+        alert ('Congrats, you win!!! You had a score of ' + userScore + ', I had a score of ' + computerScore + ' and we had ' + numOfTies + ' games tied :)')
+    } else {
+        alert ('This match was invalid, please try again.')
+    }
 
-
-//What I need to do: Make an if for if they say rock paper scissors, all caps, lowercase use && to simplify this. And if the if equals scissors check if it wins or loses against my attempt. Eg. All scissors lose against rock and win against paper. First part is to make sure all slightly wrong answers work, and then check if they said scissors and i said rock make them lose but if they said scissors and i said rock make them win etc. See if this is actually the best way to do this otherwise SIMPLIFY it.
-
-//I want to assign a different worth to all of the rock paper and scissors and then just say if the answer is less than that kind of thing.
-
-
-
-
+ 
+//What I need to do, write comments and check with all versions of testing and mention within the commit.
 }
