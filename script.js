@@ -68,4 +68,4 @@ function rockPaperScissors () {
     }
 }
 
-//What i want to do: when it's invalid -- do output the computers attempt before telling them...
+//What i want to do: when it's invalid -- do output the computers attempt before telling them... Also make it when the final match is tied -- make it not invalid. Add another else and the comments for it.
