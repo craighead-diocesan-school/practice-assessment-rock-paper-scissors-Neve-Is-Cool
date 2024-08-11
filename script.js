@@ -18,7 +18,9 @@ function rockPaperScissors () {
         let computerAttempt = attempts[index]
 
         let userAttempt = prompt ("Let's play a game; Paper, Scissors, Rock & Best out of three! Answer below with either 'paper', 'scissors' or 'rock'!")
+
         userAttempt = userAttempt.toLowerCase()
+        userAttempt = userAttempt.trim()
 
         alert (computerAttempt + ' is my attempt!')
         
