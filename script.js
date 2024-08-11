@@ -49,7 +49,7 @@ function rockPaperScissors () {
         } else {
             alert ('Invalid Response, please try again.')
             numOfAttempts = numOfAttempts - 1
-            //If the input of the user is invalid eg. Papee or Scissor or Rck, it will output this message to the user, it then takes one away from the number of attempts -- allowing the user to have the full amount of their attempts.
+            //If the input of the user is invalid eg. Banana or Scissor or 2, it will output this message to the user, it then takes one away from the number of attempts -- allowing the user to have the full amount of their attempts.
         }
 
         numOfAttempts = numOfAttempts + 1
