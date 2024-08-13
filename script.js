@@ -1,3 +1,6 @@
+let players = [
+ ]
+
 function rockPaperScissors () {
     
     let attempts = [
@@ -12,6 +15,9 @@ function rockPaperScissors () {
     let computerScore = 0
     let numOfTies = 0
     //Allows all of these variables to be automatically set to zero, so numbers can be added that reflect the score of the game.
+
+    let usersName = prompt ('What is your name?')
+
 
     while (numOfAttempts<3) {
 
@@ -54,18 +60,29 @@ function rockPaperScissors () {
 
         numOfAttempts = numOfAttempts + 1
         //Increases the number of attempts for each round, allowing for three rounds and no more. 
+
     }
 
     if (computerScore>userScore) {
         alert ('You had a score of ' + userScore + ', I had a score of ' + computerScore + ' and we had ' + numOfTies + ' games tied, so I win!!!! AND YOU LOSE')
+        players.push('Computer - Winner')
         //If the user's score is greater than the computer's score, it will output this message which also informs the user of the score in the three matches.
     } else if (computerScore<userScore) {
         alert ('Congrats, you win!!! You had a score of ' + userScore + ', I had a score of ' + computerScore + ' and we had ' + numOfTies + ' games tied :)')
+        players.push(usersName + ' - Winner')
         //If the user's score is less than the computer's score, it will output this message which also informs the user of the score in the three matches.
+    } else if (computerScore == userScore) {
+        alert ('We tied overall!! You had a score of ' + userScore + ', I had a score of ' + computerScore + ' and we had ' + numOfTies + ' games tied')
+        players.push('Draw')
+        //If the overall score is a draw; eg. user wins one, computer wins one, one tie, it will output this message and add 'draw' to the leaderboard.
     } else {
         alert ('This match was invalid, please try the game again.')
         //If there was an error with the match, this message will output to the user.
     }
 }
 
-//What i want to do: when it's invalid -- do output the computers attempt before telling them... Also make it when the final match is tied -- make it not invalid. Add another else and the comments for it.
+function showScoreboard () {
+    alert (players)
+}
+
+//What i want to do: when it's invalid -- do output the computers attempt before telling them.
