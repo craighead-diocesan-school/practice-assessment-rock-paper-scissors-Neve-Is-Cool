@@ -87,8 +87,8 @@ function showScoreboard () {
     let count = 0
     let scoreBoard = ''
     while (count<arrayLength) {
-    scoreBoard = scoreBoard + players[count] + ', '
-    count = count + 1
+        scoreBoard = scoreBoard + players[count] + ', '
+        count = count + 1
     }
     alert ('The Scoreboard is...' + scoreBoard)
 }
