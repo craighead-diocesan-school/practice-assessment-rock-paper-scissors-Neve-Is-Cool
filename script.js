@@ -81,8 +81,18 @@ function rockPaperScissors () {
     }
 }
 
+
 function showScoreboard () {
-    alert (players)
+    let arrayLength = players.length
+    let count = 0
+    let scoreBoard = ''
+    while (count<arrayLength) {
+    scoreBoard = scoreBoard + players[count] + ', '
+    count = count + 1
+    }
+    alert ('The Scoreboard is...' + scoreBoard)
 }
 
 //What i want to do: when it's invalid -- do output the computers attempt before telling them.
+
+//Currently if I add a space or a comma, it only comes after the entire array.
