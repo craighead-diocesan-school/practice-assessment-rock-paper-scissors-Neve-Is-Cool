@@ -1,5 +1,6 @@
 let players = [
  ]
+ //Empty array for scoreboard, players and their status will be added for final scoreboard.
 
 function rockPaperScissors () {
     
@@ -17,7 +18,7 @@ function rockPaperScissors () {
     //Allows all of these variables to be automatically set to zero, so numbers can be added that reflect the score of the game.
 
     let usersName = prompt ('What is your name?')
-
+    //Asks user their name then stores it within the usersName variable name.
 
     while (numOfAttempts<3) {
 
@@ -37,14 +38,14 @@ function rockPaperScissors () {
         if (userAttempt == computerAttempt) {
             alert('We tied! Keep going!')
             numOfTies = numOfTies + 1
-            //If the user's attempt is equal to the generated computers attempt, it outputs the message 'We tied! Try again' to the user and adds 1 to the number of ties for the scoreboard.
+            //If the user's attempt is equal to the generated computers attempt, it outputs the message 'We tied! Try again' to the user and adds 1 to the number of ties for the matches score.
         } else if (
             userAttempt == 'scissors' && computerAttempt == 'paper' || 
             userAttempt == 'rock' && computerAttempt == 'scissors' || 
             userAttempt == 'paper' && computerAttempt == 'rock') {
             alert('Congrats, you win!') 
             userScore = userScore + 1
-            //If the user's attempt beats the generated computers attempt, it will output the message 'Congrats, you win!' and add 1 to the user's score.
+            //If the user's attempt beats the generated computers attempt, it will output the message 'Congrats, you win!' and add 1 to the user's score. 
         } else if (
             userAttempt == 'paper' && computerAttempt == 'scissors' || 
             userAttempt == 'rock' && computerAttempt == 'paper' || 
@@ -66,18 +67,18 @@ function rockPaperScissors () {
     if (computerScore>userScore) {
         alert ('You had a score of ' + userScore + ', I had a score of ' + computerScore + ' and we had ' + numOfTies + ' games tied, so I win!!!! AND YOU LOSE')
         players.push('Computer - Winner')
-        //If the user's score is greater than the computer's score, it will output this message which also informs the user of the score in the three matches.
+        //If the user's score is greater than the computer's score, it will output this message which also informs the user of the score in the three matches. Also adds 'Computer - Winner' to the players array.
     } else if (computerScore<userScore) {
         alert ('Congrats, you win!!! You had a score of ' + userScore + ', I had a score of ' + computerScore + ' and we had ' + numOfTies + ' games tied :)')
         players.push(usersName + ' - Winner')
-        //If the user's score is less than the computer's score, it will output this message which also informs the user of the score in the three matches.
+        //If the user's score is less than the computer's score, it will output this message which also informs the user of the score in the three matches. Adds the usersName and the phrase ' - Winner' to the players array so it can be viewed in the scoreboard.
     } else if (computerScore == userScore) {
         alert ('We tied overall!! You had a score of ' + userScore + ', I had a score of ' + computerScore + ' and we had ' + numOfTies + ' games tied')
         players.push('Draw')
-        //If the overall score is a draw; eg. user wins one, computer wins one, one tie, it will output this message and add 'draw' to the leaderboard.
+        //If the overall score is a draw; eg. user wins one, computer wins one, one tie, it will output this message and add 'draw' to the scoreboard.
     } else {
         alert ('This match was invalid, please try the game again.')
-        //If there was an error with the match, this message will output to the user.
+        //If there was an error with the match, this message will output to the user, nothing will be added to the scoreboard.
     }
 }
 
@@ -95,4 +96,4 @@ function showScoreboard () {
 
 //What i want to do: when it's invalid -- do output the computers attempt before telling them.
 
-//Currently if I add a space or a comma, it only comes after the entire array.
+//Currently if I add a space or a comma, it only comes after the entire array.\\\
